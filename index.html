@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="/favicon.svg">
     <meta name="referrer" content="no-referrer">
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-    <script defer src="https://jsd.onmicrosoft.cn/npm/notiflix@3.2.5/dist/notiflix-notify-aio-3.2.5.min.js"></script>
+    <script defer src="https://doge.jsdelivr.daoblog.top/npm/notiflix@3.2.5/dist/notiflix-notify-aio-3.2.5.min.js"></script>
     <!--<script defer data-domain="news.icodeq.com" src="https://vercel.site.icodeq.com/js/script.js"></script>-->
     <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/notiflix@3.2.5/dist/notiflix-3.2.5.min.css">
+    <link rel="stylesheet" href="https://doge.jsdelivr.daoblog.top/npm/notiflix@3.2.5/dist/notiflix-3.2.5.min.css">
     <link rel="stylesheet" href="/news.css">
     <title>Yandao Daily</title>
     <script async defer src="https://analytics.umami.is/script.js" data-website-id="b6b76f8c-704c-4dde-8441-447692b0de31"></script>
@@ -27,6 +27,9 @@
     <link rel="stylesheet"  href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" onload="this.media='all'" />
     <link rel="stylesheet"  href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@300;400;500;600;700&display=swap" onload="this.media='all'" />
     </noscript>
+    <script defer type="text/javascript" src="/js/console-text.js"></script>
+    <script src="https://doge.jsdelivr.daoblog.top/npm/pangu.simple@1.0.5/dist/browser/pangu.js"></script>
+    <script defer type="text/javascript" src="/js/mouse.js"></script>
   </head>
 
   <body class='typora-export os-windows'>
@@ -92,6 +95,7 @@
               <p style="color: #8B959F;font-family: 'Noto Serif SC';font-weight: lighter;">
                 学习新思想，争做新青年
               </p>
+              <span id="runtime_span"></span>
             </a>
             <br>
           <!--<p>
@@ -102,7 +106,13 @@
       </div>
     </div>
   </body>
-  <script src="https://jsd.onmicrosoft.cn/npm/nprogress@0.2.0/nprogress.js"></script>
-  <link href="https://jsd.onmicrosoft.cn/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+  <!--<script src="https://doge.jsdelivr.daoblog.top/npm/nprogress@0.2.0/nprogress.js"></script>
+  <link href="https://doge.jsdelivr.daoblog.top/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">-->
   <script src="./index.js"></script>
+  <script>
+    pangu.spacingPage(); /*全局应用pangu.js*/
+  </script>
+  <script>
+    function show_runtime() {window.setTimeout("show_runtime()",1000); X=new Date("02/01/2023 11:45:14"); Y=new Date(); T=(Y.getTime()-X.getTime()); M=24*60*60*1000; a=T/M;A=Math.floor(a); b=(a-A)*24;B=Math.floor(b); c=(b-B)*60;C=Math.floor((b-B)*60); D=Math.floor((c-C)*60); runtime_span.innerHTML="已运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"}show_runtime();  Date("11/12/2021 11:45:14") 
+</script>
   </html>
