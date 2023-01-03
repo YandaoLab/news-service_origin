@@ -70,7 +70,7 @@ function get_bing_into_local_storage () {
             localStorage.setItem('bing', JSON.stringify(data));
             bing_load(index);
         } else {
-            handleError('Bing 获取失败');
+            handleError('Bing 壁纸获取失败');
         }
     }
     xhr.onerror = handleError;
@@ -132,7 +132,7 @@ function zhihu_first_load () {
         handleError_zhihu(error);
     }
     if (localStorage.getItem('detail') === null) {
-    Notiflix.Notify.info('你知道吗？点击条目可以查看原文哦。点我确认知晓。', ()=>{
+    Notiflix.Notify.info('你知道吗？点击条目可以查看原文~ 点我确认知晓。', ()=>{
         localStorage.setItem('detail', 'true');
         });
     }
@@ -142,7 +142,7 @@ function _163_init_load () {
     try{
     const days = JSON.parse(this.responseText);
     if (days['suc']) {
-        Notiflix.Notify.success('当前网易新闻数据源为最新数据');
+        Notiflix.Notify.success('当前网易数据源为最新数据');
         const cache = str_to_date(days['data']['date']);
         localStorage.setItem('163_cache', cache);
     } else{
@@ -255,7 +255,7 @@ function days_load (show_only) {
                 showOnlyTheLastOne: show_only,    });   
         }
         // 加载weiyu
-        if (data['weiyu'].includes('【一言】')){
+        if (data['weiyu'].includes('【微语】')){
             document.getElementById('weiyu').innerHTML = data['weiyu'].replace("【一言】", '');
         } else {
             // 获取一言
