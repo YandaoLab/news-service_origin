@@ -255,8 +255,8 @@ function days_load (show_only) {
                 showOnlyTheLastOne: show_only,    });   
         }
         // 加载weiyu
-        if (data['weiyu'].includes('【微语】')){
-            document.getElementById('weiyu').innerHTML = data['weiyu'].replace("【微语】", '');
+        if (data['weiyu'].includes('【一言】')){
+            document.getElementById('weiyu').innerHTML = data['weiyu'].replace("【一言】", '');
         } else {
             // 获取一言
             const xhr = new XMLHttpRequest();
