@@ -260,7 +260,7 @@ function days_load (show_only) {
         } else {
             // 获取一言
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://v1.hitokoto.cn?c=d&c=k&c=i&max_length=20');
+            xhr.open('GET', 'https://v1.hitokoto.cn?c=k&c=d&c=i');
             xhr.onload = weiyu_load;
             xhr.onerror = handleError;
             xhr.send();

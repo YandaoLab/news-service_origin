@@ -11,7 +11,7 @@ headers = {
 
 
 def get_cookies(news_str):
-    url_base = f"https://quark.sm.cn/s?q={news_str}"
+    url_base = f"https://cn.bing.com/search?q={news_str}"
     _ = requests.get(url_base, headers=headers)
     # soup = BeautifulSoup(_.text, 'lxml')
     # topic = soup.find_all("div", attrs={"class": "topic-news-m-eventlist"})
