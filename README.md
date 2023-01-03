@@ -1,7 +1,8 @@
-# 每日早报
+# 每日早报 政治课自用版 | [原项目地址](https://github.com/YandaoLab/zkeq/news)
 
 [![news.ydlk.cc](https://socialify.git.ci/YandaoLab/news.ydlk.cc/image?font=Rokkitt&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Dark)](https://news.ydlk.cc)
 
+<!--
 #### 项目起因
 
 - 经常在各种地方看到 `每日60s读懂世界`
@@ -38,7 +39,7 @@
 3. 将 `api/index.py`  中的 `from api.crawler` 改为 `from crawler`
 4. 运行 ` python api/index.py`
 5. 将 `index.js`中的 api 域名改为部署得到的域名即可
-
+-->
 #### API 说明
 
 GET：`/api`
