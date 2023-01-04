@@ -1,6 +1,6 @@
 # 每日早报 政治课自用版 | [原项目地址](https://github.com/YandaoLab/zkeq/news)
 
-[![news.ydlk.cc](https://socialify.git.ci/YandaoLab/news.ydlk.cc/image?font=Rokkitt&language=1&name=1&owner=1&theme=Auto)](https://news.ydlk.cc)
+[![news.ydlk.cc](https://socialify.git.ci/YandaoLab/news.ydlk.cc/image?font=Rokkitt&language=1&logo=https%3A%2F%2Fxingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com%2F5115%2F202301040921593.png&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)](https://news.ydlk.cc)
 
 <!--
 #### 项目起因
