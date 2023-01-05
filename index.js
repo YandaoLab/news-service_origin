@@ -136,6 +136,11 @@ function zhihu_first_load () {
         localStorage.setItem('detail', 'true');
         });
     }
+    if (localStorage.getItem('20230105') === null) {
+        Notiflix.Notify.info('20230105知乎源第六条涉及科技创新，请留意。点我确认知晓。', ()=>{
+            localStorage.setItem('20230105', 'true');
+            });
+    }
 }
 
 function _163_init_load () {
