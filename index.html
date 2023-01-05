@@ -41,6 +41,7 @@
     <script src="https://doge.jsdelivr.daoblog.top/npm/pangu.simple@1.0.5/dist/browser/pangu.js"></script>
     <script defer type="text/javascript" src="/js/mouse.js"></script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
   </head>
 
   <body class='typora-export os-windows'>
@@ -128,10 +129,25 @@
     function show_runtime() {window.setTimeout("show_runtime()",1000); X=new Date("01/02/2023 11:45:14"); Y=new Date(); T=(Y.getTime()-X.getTime()); M=24*60*60*1000; a=T/M;A=Math.floor(a); b=(a-A)*24;B=Math.floor(b); c=(b-B)*60;C=Math.floor((b-B)*60); D=Math.floor((c-C)*60); runtime_span.innerHTML="已运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"}show_runtime();  Date("11/12/2021 11:45:14") 
   </script>
   <script src="https://yandaostatus.statuspage.io/embed/script.js"></script>
-  <script src="https://utteranc.es/client.js"
+  <!--<script src="https://utteranc.es/client.js"
         repo="YandaoLab/Comments"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
-        async></script>
+        async></script>-->
+  <div id="vcomments"></div>
+  <script>
+      new Valine({
+          el: '#vcomments',
+          appId: 'gE1cI5WU00k63cs2MGmySKDy-gzGzoHsz',
+          appKey: 'FmefAZzssd2TyPoXrhnRJgaV',
+          serverURLs: "server.lean.cn.news.daoblog.top",
+          placeholder: "(｡･∀･)ﾉﾞ氦！快来评论叭~",
+          avatar: "retro",
+          recordIP: true,
+          enableQQ: true,
+          requiredFields: ['nick','mail'],
+          visitor: true,
+      })
+  </script>
   </html>

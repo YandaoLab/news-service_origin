@@ -141,6 +141,11 @@ function zhihu_first_load () {
             localStorage.setItem('20230105', 'true');
             });
     }
+    if (localStorage.getItem('valine') === null) {
+        Notiflix.Notify.info('现已接入Valine评论系统，页面下方可评论~ 点我确认知晓。', ()=>{
+            localStorage.setItem('valine', 'true');
+            });
+    }
 }
 
 function _163_init_load () {
