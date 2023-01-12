@@ -1,5 +1,5 @@
 let index = 0;
-let origin = 'zhihu';
+let origin = '163';
 // 方向
 let direction = 'before';
 let show_only = false;
