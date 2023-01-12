@@ -164,7 +164,7 @@ function zhihu_first_load () {
             });
     }
     if (localStorage.getItem('20230112') === null) {
-        Notiflix.Notify.info('受大陆相关审查影响，2023/01/12的日报信息在评论区以图片的形式发布，点喔确认知晓。', ()=>{
+        Notiflix.Notify.info('受大陆相关审查影响，2023/01/12的日报信息在评论区以图片的形式发布，点我确认知晓。', ()=>{
             localStorage.setItem('20230112', 'true');
             });
     }
