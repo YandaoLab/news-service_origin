@@ -109,10 +109,10 @@ function str_to_date(str) {
         const cache = `${year}-${month}-${day}`; 
         return cache; 
     }catch(error){
-        const month = date_str.split('月')[0];
-        const day = date_str.split('月')[1].split('日')[0];
-        const cache = `${month}-${day}`;  
-        return cache;     
+    //    const month = date_str.split('月')[0];
+    //    const day = date_str.split('月')[1].split('日')[0];
+    //    const cache = `${month}-${day}`;  
+    //    return cache;     
     }
 }
 
