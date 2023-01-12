@@ -12,7 +12,7 @@ def news(response: Response, index: int = 0, origin: str = 'zhihu', cache: str =
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     response.headers["Access-Control-Allow-Origin"] = "*"
     if origin == "undefined":
-        origin = "zhihu"
+        origin = "163"
     if news_str != 'null':
         return news_source(news_str)
     return new(index, origin)
