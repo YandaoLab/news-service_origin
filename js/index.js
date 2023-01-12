@@ -109,10 +109,27 @@ function str_to_date(str) {
         const cache = `${year}-${month}-${day}`; 
         return cache; 
     }catch(error){
-    //    const month = date_str.split('月')[0];
-    //    const day = date_str.split('月')[1].split('日')[0];
-    //    const cache = `${month}-${day}`;  
-    //    return cache;     
+        const month = date_str.split('月')[0];
+        const day = date_str.split('月')[1].split('日')[0];
+        const cache = `${month}-${day}`;  
+        return cache;     
+    }
+}
+
+
+
+function _163_init_load () {
+    try{
+    const days = JSON.parse(this.responseText);
+    if (days['suc']) {
+        Notiflix.Notify.success('当前网易数据源为最新数据');
+        const cache = str_to_date(days['data']['date']);
+        localStorage.setItem('163_cache', cache);
+    } else{
+        handleError_163(days['data']['title']);
+    }
+    }catch(error){
+        handleError_163(error);
     }
 }
 
@@ -145,21 +162,6 @@ function zhihu_first_load () {
         Notiflix.Notify.info('现已接入Valine评论系统，页面下方可评论~ 点我确认知晓。', ()=>{
             localStorage.setItem('valine', 'true');
             });
-    }
-}
-
-function _163_init_load () {
-    try{
-    const days = JSON.parse(this.responseText);
-    if (days['suc']) {
-        Notiflix.Notify.success('当前网易数据源为最新数据');
-        const cache = str_to_date(days['data']['date']);
-        localStorage.setItem('163_cache', cache);
-    } else{
-        handleError_163(days['data']['title']);
-    }
-    }catch(error){
-        handleError_163(error);
     }
 }
 
