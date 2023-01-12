@@ -211,7 +211,7 @@ function curl_news_sourece(i, data){
             // console.log(data);
             let ul_data = data['data'];
             if (ul_data.length === 0) {
-                ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索页面</p></a> </li>`];
+                ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索</p></a> </li>`];
             }else{
                 // 将里面的 href 和 title 封装成一个 ul
                 ul_data = ul_data.map(function (item) {
@@ -224,18 +224,18 @@ function curl_news_sourece(i, data){
             init(i);
             NProgress.set(i / document.getElementById('news').children.length + 0.3);
         }else{
-            ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索页面</p></a> </li>`];
+            ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索</p></a> </li>`];
             document.getElementById('news').children[i].innerHTML += `<ul class='hide'>${ul_data.join('')}</ul>`;
             NProgress.set(i / document.getElementById('news').children.length + 0.3);
         }}
     xhr.onerror = function () {
-        ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索页面</p></a> </li>`];
+        ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索</p></a> </li>`];
         document.getElementById('news').children[i].innerHTML += `<ul class='hide'>${ul_data.join('')}</ul>`;
         NProgress.set(i / document.getElementById('news').children.length + 0.3);
     };
     xhr.send();
     }catch(error){
-        ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索页面</p></a> </li>`];
+        ul_data = [`<li onclick="stop_open(event)"><a href="https://quark.sm.cn/s?q=${news_source}" target="_blank">${news_source} <p class='right'>点击进入搜索</p></a> </li>`];
         document.getElementById('news').children[i].innerHTML += `<ul class='hide'>${ul_data.join('')}</ul>`;
         NProgress.set(i / document.getElementById('news').children.length + 0.3);
 }
@@ -357,10 +357,10 @@ function get_day_news(index, origin){
       try{
         NProgress.start();
         const xhr = new XMLHttpRequest();
-        if (origin === 'zhihu') {
-            cache =  localStorage.getItem('zhihu_cache');
-        }else{
+        if (origin === '163') {
             cache =  localStorage.getItem('163_cache');
+        }else{
+            cache =  localStorage.getItem('zhihu_cache');
         }
         xhr.open('GET', `/api?index=${index}&cache=${cache}&origin=${origin}`);
         xhr.onload = days_load;
@@ -412,16 +412,16 @@ function change_page() {
 }
 
 function change_origin  (){
-    if (origin === 'zhihu'){
-        origin = '163';
-        setTimeout(() => {
-            Notiflix.Notify.success('成功切换源为网易新闻');
-        }, 1000);
-    }
-    else{
+    if (origin === '163'){
         origin = 'zhihu';
         setTimeout(() => {
             Notiflix.Notify.success('成功切换源为知乎');
+        }, 1000);
+    }
+    else{
+        origin = '163';
+        setTimeout(() => {
+            Notiflix.Notify.success('成功切换源为网易新闻');
         }, 1000);
     }
     get_day_news(index, origin);
