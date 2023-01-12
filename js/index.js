@@ -81,15 +81,6 @@ function get_bing_into_local_storage () {
 function first_xhr () {
     const now_time = new Date().getHours() +"hrs" + new Date().getMinutes() + "min";
     try{
-        const xhr_zhihu = new XMLHttpRequest();
-        xhr_zhihu.open('GET', 'https://news.ydlk.cc/api?origin=zhihu&_vercel_no_cache=1' + '&cache=' + now_time);
-        xhr_zhihu.onload = zhihu_first_load;
-        xhr_zhihu.onerror = handleError_zhihu;
-        xhr_zhihu.send();
-    }catch(e){
-        handleError_zhihu(e);
-    }
-    try{
         const xhr_163 = new XMLHttpRequest();
         xhr_163.open('GET', 'https://news.ydlk.cc/api?origin=163&_vercel_no_cache=1'+ '&cache=' + now_time);
         xhr_163.onload = _163_init_load;
@@ -97,6 +88,15 @@ function first_xhr () {
         xhr_163.send();
     }catch(e){
         handleError_163(e);
+    }
+    try{
+        const xhr_zhihu = new XMLHttpRequest();
+        xhr_zhihu.open('GET', 'https://news.ydlk.cc/api?origin=zhihu&_vercel_no_cache=1' + '&cache=' + now_time);
+        xhr_zhihu.onload = zhihu_first_load;
+        xhr_zhihu.onerror = handleError_zhihu;
+        xhr_zhihu.send();
+    }catch(e){
+        handleError_zhihu(e);
     }
 }
 
@@ -172,11 +172,11 @@ function weiyu_load () {
 }
 
 function get_now_str () {
-    if (origin === 'zhihu') {
-        return '知乎';
-    }
     if (origin === '163') {
         return '网易新闻';
+    }
+    if (origin === 'zhihu') {
+        return '知乎';
     }
 }
 
