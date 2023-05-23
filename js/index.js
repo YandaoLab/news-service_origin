@@ -153,21 +153,6 @@ function zhihu_first_load () {
         localStorage.setItem('detail', 'true');
         });
     }
-    if (localStorage.getItem('20230105') === null) {
-        Notiflix.Notify.info('20230105知乎源第六条涉及科技创新，请留意。点我确认知晓。', ()=>{
-            localStorage.setItem('20230105', 'true');
-            });
-    }
-    if (localStorage.getItem('valine') === null) {
-        Notiflix.Notify.info('现已接入Valine评论系统，页面下方可评论~ 点我确认知晓。', ()=>{
-            localStorage.setItem('valine', 'true');
-            });
-    }
-    if (localStorage.getItem('20230112') === null) {
-        Notiflix.Notify.info('受大陆相关审查影响，2023/01/12的日报信息在评论区以图片的形式发布，点我确认知晓。', ()=>{
-            localStorage.setItem('20230112', 'true');
-            });
-    }
 }
 
 
